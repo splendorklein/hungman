@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+body {
+  background: url(hangman-bg.png) fixed;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+input {
+  border: 2px solid #999;
+  font-family: Helvetica, sans-serif;
+  color: #999;
+}
+
+input#user_name, input#email{
+  width: 100%;
+  padding: 12px 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+div.alert{
+  background: #BBB;
+}
+#ratefeld {
+  font-family: 'Permanent Marker', 'cursive';
+  font-size: 2.0em;
+}
+
+h1 {
+  font-family: 'Permanent Marker', 'cursive';
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+.container {
+  padding: 16px;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.dismiss-messages {
+  cursor: pointer;
+}
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
