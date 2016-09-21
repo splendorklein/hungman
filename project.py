@@ -166,10 +166,11 @@ def get_file(filename):
         return str(exc)
 
 @ssl_required
-@app.route("/hungman/pic")
-@app.route("/hungman/pic/")
-def hungmanPic():
-    filename = 'hungman' + request.args.get('num') + '.png'
+
+@app.route("/hungman/pic/<string:num>")
+@app.route("/hungman/pic/<string:num>/")
+def hungmanPic(num):
+    filename = 'hungman' + num + '.png'
     content = get_file(filename)
     return Response(content, mimetype='image/gif')
 
