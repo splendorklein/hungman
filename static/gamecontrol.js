@@ -70,7 +70,7 @@ hungmanApp.controllers.controller('RootCtrl',
                 }
                 var attempts_remaining = gamedata[0].attempts_remaining;
                 var hungPic = 5 - attempts_remaining;
-                var hungPicUrl = '<br/><img src="https://linmaocong.com/hangman/pic?num=' + hungPic + '"><br/>';
+                var hungPicUrl = '<br/><img src="https://linmaocong.com/hangman/pic/' + hungPic + '"><br/>';
                 var div = document.createElement("DIV"); 
                 div.innerHTML = hungPicUrl;
                 ratefeld.appendChild(div);
