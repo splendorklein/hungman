@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hungman</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='hunmanstyle.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+    <script>
+        function init() {
+          var rootpath = "//hangman-1272.appspot.com/_ah/api";
+          gapi.client.load('hangman', 'v1', function () {
+                angular.bootstrap(document, ['hungmanApp']);
+            }, rootpath);
+        };
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+
+</head>
+
+<body ng-controller="RootCtrl" ng-init="initRoot()">
+    <h1>Hungman</h1>
+    <p style="font-family: 'Permanent Marker';" id="input_greet_generically">Please wait</p>
+
+    <div class="container" ng-controller="SignInCtrl" ng-init="initSignIn()" >
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="messages" class="alert" ng-show="messages">
+                    <span ng-bind="messages"></span>
+                    <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="messages = ''"
+                       ng-show="messages"></i>
+                </div>
+
+            </div>
+        </div>
+        <form id="logginform" name="logginform">
+          <div ng-show="!loggined">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="user_name" id="user_name" required>
+
+            <label><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email"
+            id="email" required>
+
+            <input type = "button" ng-click="loggin()" value="Login" >
+            <input type = "button" ng-click="signup()" value="Sign up">
+            <input type="checkbox" checked="checked"> Remember me
+          </div>
+          <div ng-show="loggined">
+              <input type = "button" ng-click="logout()" value="Log out" >
+          </div>
+
+        </form>
+ 
+    </div>
+   
+    
+    <div class="container" ng-controller="GameCtrl" >
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="gamemessages" class="alert" ng-show="gamemessages">
+                    <span ng-bind="gamemessages"></span>
+                    <i class="dismiss-messages pull-right glyphicon glyphicon-remove" ng-click="gamemessages = ''"
+                       ng-show="gamemessages"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-lg-12">
+                <form name="rateformular" ng-show="(!gameloaded && loggined)||gameOver">
+                    <p id="createGame">You have no active game! Let's create one!</p>
+                    <input type="button" ng-click="newGame()" value="New Game" >
+                </form>
+                <form name="rateformular" ng-show = "gameloaded">
+                    <p id="ratefeld"></p>
+                    <input id="ratezeichen" type="text">
+                    <input name="ratebutton" type="button" value="Guess" ng-click="makeMove()">
+
+                    <p id="gerateneBuchstaben">History:</p>
+                    
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="{{ url_for('static', filename='hungmancontrol.js') }}"></script>
+    <script src="{{ url_for('static', filename='gamecontrol.js') }}"></script>  
+</body>
+
+
+</html>
+
+
+
+
+

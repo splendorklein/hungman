@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Linmao's Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Portfolio  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{{ url_for('static', filename='bootstrap.css') }}" rel='stylesheet' type='text/css' />
+<script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<link href="{{ url_for('static', filename='style.css') }}" rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="{{ url_for('static', filename='move-top.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='easing.js') }}"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+</script>
+</head>
+<body>	
+	<!-- container -->
+		<!-- header -->
+		<div id="home" class="header">
+			<div class="container">
+				<!-- -->
+				<div class="nav-icon">
+					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
+				</div>
+				 <div class="box" id="box">
+					 <div class="box_content">        					                         
+						<div class="box_content_center">
+						 	<div class="form_content">
+								<div class="menu_box_list">
+									<ul>
+										<li><a class="scroll" href="#home">Home</a></li>
+										<li><a class="scroll" href="#about">About</a></li>
+										<li><a class="scroll" href="#skills">Skill</a></li>
+										<li><a class="scroll" href="#blog">Project</a></li>
+										<li><a class="scroll" href="#contact">Contact</a></li>
+										<div class="clear"> </div>
+									</ul>
+								</div>
+								<a class="boxclose" id="boxclose"> <span> </span></a>
+							</div>                                  
+						</div> 	
+					</div> 
+				</div>    
+				<!-- script-for-box -->
+				 <script type="text/javascript">
+					var $ = jQuery.noConflict();
+						$(function() {
+							$('#activator').click(function(){
+								$('#box').animate({'top':'0px'},500);
+							});
+							$('#boxclose').click(function(){
+							$('#box').animate({'top':'-700px'},500);
+							});
+						});
+						$(document).ready(function(){
+						//Hide (Collapse) the toggle containers on load
+						$(".toggle_container").hide(); 
+						//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+						$(".trigger").click(function(){
+							$(this).toggleClass("active").next().slideToggle("slow");
+								return false; //Prevent the browser jump to the link anchor
+						});
+											
+					});
+				</script>
+				<!-- /script-for-box -->
+
+				<!-- banner-info -->
+				<div class="banner-info text-center">
+					<img src="{{ url_for('static', filename='pic.png') }}" class="img-responsive" alt=""/>
+					<h1>Linmao Cong</h1>
+					<p>Love to Code and Explore :)</p>
+					<ul>
+						<li><a href="{{ url_for('contact') }}">Hire Me</a></li>
+						<li><a href="https://www.linkedin.com/in/linmaocong">Follow Me</a></li>
+					</ul>
+				</div>
+				<!-- /banner-info -->
+			</div>
+		</div>
+		<!-- /header -->
+		
+
+		<!-- about -->
+		<div id="about" class="about">
+			<div class="container">
+				<!-- head-section -->
+				<div class="head-section text-center">
+					<h2>About Me</h2>
+					<span></span>
+				</div>
+				<!-- head-section -->
+				<!-- about-grids -->
+				<div class="about-grids">
+					<div class="col-md-6 about-left-grid">
+						<h3>Linmao Cong</h3>
+						<span>I'm seeking full-time Full Stack Developer position.</span>
+						
+						<p>Full stack developer:</p>
+						<p>With a passion to make pixels and lines of code into clean, responsive, and user friendly websites.</p> 
+						<p>Capable of involving full software development cycle with comprehensive knowledge of software design and implementations.</p>
+						<p>Possessing strong programming concepts and problem solving skills in a number of programming languages, tools and technologies.</p>
+						<p>Good interpersonal and communication skills, commitment, result-oriented, eager to learn new technologies and undertake challenging risks.</p>
+						<p>I love teaming up with innovative, mission-driven individuals who want to make an impact in the world. I am always searching for new ways to increase efficiency and effectiveness.</p>
+					</div>
+					<div class="col-md-6 about-right-grid">
+						<a class="popup-with-zoom-anim" href="#small-dialog"><img src="{{ url_for('static', filename='video.jpg') }}" title="name" /></a>
+					</div>
+				</div>
+				<!-- /about-grids -->
+			</div>
+		</div>
+		
+				<!--pop-up-box-->
+				<script type="text/javascript" src="{{ url_for('static', filename='modernizr.custom.min.js') }}"></script>    
+				<link href="{{ url_for('static', filename='popuo-box.css') }}" rel="stylesheet" type="text/css" media="all"/>
+				<script src="{{ url_for('static', filename='jquery.magnific-popup.js') }}" type="text/javascript"></script>
+				<div id="small-dialog" class="mfp-hide">
+					<iframe src="{{ url_for('contact') }}"> </iframe>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>								  
+				<!--/pop-up-box-->
+		<!-- /about -->
+
+		<!-- skills -->
+		<div id="skills" class="skills">
+			<!-- head-section -->
+				<div class="head-section service-head text-center">
+					<h2>My Skill</h2>
+					<span></span>
+				</div>
+				<!-- head-section -->
+				<!-- skills-grids -->
+				<div class="service-grids text-center">
+					<div class="container">
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion1"> </span>
+								<h3>Programming Language</h3>
+								<p>Python, HTML5, CSS3, JavaScript, C/C++, Java</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion2"> </span>
+								<h3>Database</h3>
+								<p>PostgreSQL, SQLite, MySQL, Google NDB</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid t-service-grid">
+								<span class="s-cion3"> </span>
+								<h3>Software/Tools</h3>
+								<p>OAuth 2.0, Linux, Git/GitHub, Matlab, SPSS, Photoshop, App Engine, Cloud Endpoints, Amazon EC2</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion4"> </span>
+								<h3>Language</h3>
+								<p>English, Chinese, Cantonese</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion5"> </span>
+								<h3>Frameworks/Libs</h3>
+								<p>jQuery, Flask, SQLAlchemy, Bootstrap, JSON, AJAX</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="service-grid">
+								<span class="s-cion6"> </span>
+								<h3>Other</h3>
+								<p>Signal and Image Processing, Digital Communications, FPGA, Embedded System</p>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<!-- skills-grids -->
+		</div>
+		<!-- skills -->
+		
+
+
+
+
+		<!-- projs -->
+		<div id="blog" class="blog">
+			<div class="container">
+				<!-- head-section -->
+				<div class="head-section text-center">
+					<h2>My Projects</h2>
+					<span> </span>
+				</div>
+				<!-- /head-section -->
+				<!-- blog-articals -->
+				<div class="blog-articals">
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='blog-post.jpg') }}" title="Datamining" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="{{ url_for('index') }}">Datamining</a></h3>
+							<span>{{clicktimes1}} views</span>
+							<p>
+								<li>Developed strategies for data mining large datasets from the web (Machine Learning).</li>
+								<li>Processed data spatially to derive new knowledge about the city (Python).</li>
+								<li>Visualized data in a website map (OrientDB, HTML, JavaScript, CSS, Flask).</li>
+							</p>
+							<a class="more-btn" href="{{ url_for('index') }}">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="{{ url_for('showCatalog') }}"><img src="{{ url_for('static', filename='blog-post1.jpg') }}" title="Catalog" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="{{ url_for('showCatalog') }}">Catalog App</a></h3>
+							<span>{{clicktimes2}} views</span>
+							<p>
+							<li>Installed and configured the database server and actually hosted a web application (Flask, SQLAlchemy, Bootstrap, JSON, AJAX, OAuth).</li>
+							</p>
+							<a class="more-btn" href="{{ url_for('showCatalog') }}">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="blog-artical">
+						<div class="blog-artical-pic">
+							<a href="{{ url_for('patternmainpage') }}"><img src="{{ url_for('static', filename='blog-post3.jpg') }}" title="Pattern Recognition" /></a>
+						</div>
+						<div class="blog-artical-info">
+							<h3><a href="{{ url_for('patternmainpage') }}">Facial/Pattern Recognition Login</a></h3>
+							<span>{{clicktimes3}} views</span>
+							<p>
+							<li>Based on scale-invariant feature transform (or SIFT), this project enables you to test a pattern recognition process.</li>
+							<li>Please allow the app to access to your webcam if you want to take a snapshot as your pattern.</li>
+							<li>Please login with google or facebook accound to create your own profile.</li>
+							</p>
+							<a class="more-btn" href="{{ url_for('patternmainpage') }}">See More</a>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+
+				<!-- blog-articals -->
+				
+			</div>
+		</div>
+		<!-- /blog -->
+
+
+
+
+		<!-- projects -->
+		<div class="projects">
+			<div class="container">
+				<div class="project-grids">
+					<div class="cycle">
+						<span> </span>
+					</div>
+					<div class="project-grid total-project">
+						<p>My</p>
+						<p>Education</p>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='South_China_University_of_Technology_logo.png') }}"></span>
+					</div>
+					<div class="project-grid clientsgrid">
+						<div>
+
+						</div>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='ub_log.png') }}"></span>
+					</div>
+					<div class="project-grid people-grid">
+						<div>
+
+						</div>
+						<span> <img class="img-responsive" style="padding: 5px" src="{{ url_for('static', filename='photo.png') }}"></span>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- projects -->
+		
+
+		<!-- catch-on -->
+		<div id="contact" class="catch-on text-center">
+			<p>Want To Discuss Any Creative Projct ? <a class="catch" href="{{ url_for('contact') }}">Contact Me</a></p>
+		</div>
+		<!-- /catch-on -->
+		
+
+
+		<!-- footer -->
+		<div class="container">
+		<div class="footer">
+				
+				
+				<div class="clearfix"> </div>
+			</div>
+			<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+									<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		</div>
+		<!-- /footer -->
+	<!-- /container -->
+</body>
+</html>
+
