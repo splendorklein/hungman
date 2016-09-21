@@ -154,7 +154,9 @@ def createprofile():
 @app.route("/hungman")
 def hungman():
     if request.url.find("http://"):
-        return redirect(request.url.replace("http://", "https://"))
+        print request.url
+        print "http method"
+        return redirect("https://linmaocong.com/hungman")
     return render_template('hungman.html')
 
 def get_file(filename):
