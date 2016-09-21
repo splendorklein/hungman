@@ -171,7 +171,9 @@ def get_file(filename):
 @app.route("/hungman/pic/<string:num>")
 
 def hungmanPic(num):
+    
     filename = 'hungman' + num + '.png'
+    print filename
     root_dir = "////var/www/mywebsite/mywebsite/hungman/"
 
     return send_from_directory(root_dir,filename, mimetype='image/png')
