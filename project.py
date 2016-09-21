@@ -173,8 +173,8 @@ def get_file(filename):
 def hungmanPic(num):
     filename = 'hungman' + num + '.png'
     root_dir = "////var/www/mywebsite/mywebsite/hungman/"
-    content = get_file(filename)
-    return send_from_directory(content, mimetype='image/png')
+
+    return send_from_directory(root_dir,filename, mimetype='image/png')
 
 
 @ssl_required
