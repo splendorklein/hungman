@@ -169,7 +169,7 @@ def get_file(filename):
 @ssl_required
 
 @app.route("/hungman/pic/<string:num>")
-@app.route("/hungman/pic/<string:num>/")
+
 def hungmanPic(num):
     filename = 'hungman' + num + '.png'
     root_dir = "////var/www/mywebsite/mywebsite/hungman/"
