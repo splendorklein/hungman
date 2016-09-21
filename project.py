@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify, url_for, flash, Response, current_app
+from flask import Flask, render_template, request, redirect, jsonify, url_for, flash, Response, current_app, send_file, send_from_directory
 from sqlalchemy import create_engine, asc, func
 from sqlalchemy.orm import sessionmaker
 from database_setup import Categories, Base, Items, User, ContactInfo
@@ -153,10 +153,8 @@ def createprofile():
 
 @app.route("/hungman")
 def hungman():
-    if request.url.find("http://") < 0:
-        print request.url.find("http://")
-        print request.url
-        print "http method"
+    if request.url.find("http://") >= 0:
+
         return redirect("https://linmaocong.com/hungman")
     return render_template('hungman.html')
 
@@ -174,8 +172,9 @@ def get_file(filename):
 @app.route("/hungman/pic/<string:num>/")
 def hungmanPic(num):
     filename = 'hungman' + num + '.png'
+    root_dir = "////var/www/mywebsite/mywebsite/hungman/"
     content = get_file(filename)
-    return Response(content, mimetype='image/gif')
+    return send_from_directory(content, mimetype='image/png')
 
 
 @ssl_required
