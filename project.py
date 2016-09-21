@@ -158,13 +158,6 @@ def hungman():
         return redirect("https://linmaocong.com/hungman")
     return render_template('hungman.html')
 
-def get_file(filename):
-    try:
-        root_dir = "////var/www/mywebsite/mywebsite/hungman/"
-        src = os.path.join(root_dir, filename)
-        return open(src).read()
-    except IOError as exc:
-        return str(exc)
 
 @ssl_required
 
@@ -175,8 +168,12 @@ def hungmanPic(num):
     filename = 'hungman' + num + '.png'
     print filename
     root_dir = "////var/www/mywebsite/mywebsite/hungman/"
-
-    return send_from_directory(root_dir,filename, mimetype='image/png')
+    pic = os.path.join(root_dir, filename)
+    r = open(pic, "rb")
+    pict = r.read()
+    pictencoded = base64.b64encode(pict)
+    picturi = "data:image/jpeg;base64," + pictencoded
+    return picturi
 
 
 @ssl_required
