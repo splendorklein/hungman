@@ -150,9 +150,11 @@ def createprofile():
         else:
             return render_template("createprofile.html")
 
-@ssl_required
+
 @app.route("/hungman")
 def hungman():
+    if request.url.find("http://"):
+        return redirect(request.url.replace("http://", "https://"))
     return render_template('hungman.html')
 
 def get_file(filename):
