@@ -153,7 +153,7 @@ def createprofile():
 
 @app.route("/hungman")
 def hungman():
-    if request.url.find("http://"):
+    if request.url.find("http://") < 0:
         print request.url.find("http://")
         print request.url
         print "http method"
